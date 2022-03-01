@@ -1,0 +1,169 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+ <!-- ***** Cars Starts ***** -->
+    <section class="section" id="trainers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Featured <em>Cars</em></h2>
+                        <img src="{% static 'assets/images/line-dec.png' %}" alt="">
+                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 170px;">
+                {% for cars in cars %}
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src='{{cars.image1.url}}'>
+                    </div>
+                    <div class="down-content">
+                        <span>
+                            <del><sup>$</sup>{{cars.initial_price}} </del> &nbsp; <sup>$</sup>{{cars.price}}
+                            <br> DownPayment: <sup>$</sup>{{cars.down_payment}}
+                        </span>
+
+                        <h4>{{cars.name}}</h4>
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 1800 cc &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cog"></i> Manual &nbsp;&nbsp;&nbsp;
+                        </p>
+
+                        <ul class="social-icons">
+                            <li><a href="{% url 'detail' %}">+ View Car</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <br>
+
+            <div class="main-button text-center">
+                <a href="{% url 'cars' %}">View Cars</a>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Cars Ends ***** -->
+
+    <section class="section section-bg" id="schedule" style="background-image: url(assets/images/about-fullscreen-1-1920x700.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading dark-bg">
+                        <h2>Read <em>About Us</em></h2>
+                        <img src="{% static 'assets/images/line-dec.png' %}" alt="">
+                        <p>We provide you with the best second hand cars at affordable prices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cta-content text-center">
+                        <p>Our vision is for everyone, everywhere to have the same opportunity to reach their full potential. Our culture of innovation, diversity, and inclusion is grounded in our core values, where winning together is driven by embracing and celebrating our differences.</p>
+
+                        <p>Buying a used car instead of purchasing a new one has obvious advantages. The most important difference is, of course, the lower price point when you buy used.
+
+Vehicles are assets that suffer from depreciation. While this can be a headache for people who like to buy the latest models, it can be a boon for others happy to buy pre-owned vehicles. Buying a used car that’s even just a few years old can mean significant savings.
+
+We must, however, consider that older vehicles may require more maintenance and repair. Wear and tear inevitably takes its toll. So, the question arises.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br> <br>
+
+    <!-- ***** Call to Action Start ***** -->
+    <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="cta-content">
+                        <h2>Send us a <em>message</em></h2>
+                        <p>Do not hesitate a minute if you need a car contact us right away!</p>
+                        <div class="main-button">
+                            <a href="contact.html">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Call to Action End ***** -->
+
+    <!-- ***** Testimonials Item Start ***** -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Read our <em>Testimonials</em></h2>
+                        <img src="{% static 'assets/images/line-dec.png' %}" alt="waves">
+                        <p>We've helped a lot of people obtain what they want and they showed us their gratitude, take a look!</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{% static 'assets/images/features-first-icon.png' %}" alt="First One">
+                            </div>
+                            <div class="right-content">
+                                <h4>Mary Claire</h4>
+                                <p><em>"The people here are friendly , courteous ,and very helpful. They go out of their way to make you happy. Would recommend them to anyone."</em></p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{% static 'assets/images/features-first-icon.png' %}" alt="second one">
+                            </div>
+                            <div class="right-content">
+                                <h4>Allie Grater</h4>
+                                <p><em>"Was shopping for a used car, found one at Progressive in Texas. No pressure just straight talk. Most time I don’t like shopping at dealerships because of the pressure, Paul was not like that at all. Very nice guy, recommend him strongly."</em></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{% static 'assets/images/features-first-icon.png' %}" alt="fourth muscle">
+                            </div>
+                            <div class="right-content">
+                                <h4>Teri Dactyl</h4>
+                                <p><em>"Everyone was so nice and went over and above to find a car with my payment I wanted in mind. Love my Jeep. Will be back for my next vehicle."</em></p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{% static 'assets/images/features-first-icon.png' %}" alt="training fifth">
+                            </div>
+                            <div class="right-content">
+                                <h4>Linda Buckler-Reed</h4>
+                                <p><em>"This is such a nice service, and the website is very interactive both with phone and computer, I bought my car with ease. I first thought it was scam but the salesperson was very kind and honest."</em></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <br>
+<!-- <div class="main-button text-center">
+                <a href="testimonials.html">Read More</a>
+            </div>
+        </div> -->
+    </section>
+    <!-- ***** Testimonials Item End ***** -->
+
+{% include 'footer.html' %}
+{% endblock %}
