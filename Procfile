@@ -1,3 +1,3 @@
-web: gunicorn cardeal.wsgi:application --preload --log-file -
+web: gunicorn cardeal.wsgi --preload --log-file -
 python manage.py collectstatic --noinput
 manage.py migrate
