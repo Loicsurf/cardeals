@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 from pathlib import Path
 
@@ -53,6 +54,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'deals.urls'
+
+django_heroku.settings(locals())
 
 TEMPLATES = [
     {
