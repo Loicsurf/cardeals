@@ -1,1 +1,1 @@
-web: gunicorn cardeals.wsgi --preload --log-file -
+web: gunicorn cardeal.wsgi --preload --log-file -
